@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Details-Retro Electronics Hub</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <!-- Navbar (Same as products.html) -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <!-- Add navbar content here -->
+
+  </nav>
+
+  <!-- Product Details Section -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <img src="images/nes.jpg" class="img-fluid" alt="Nintendo Entertainment System">
+        </div>
+        <div class="col-md-6">
+          <h2>Nintendo Entertainment System</h2>
+          <p class="text-muted">$99.9</p>
+          <p>Relive the golden age of gaming with this classic NES console. Comes with two controllers and 10 classic
+            games.</p>
+          <button class="btn btn-primary" onclick="addToCart('Nintendo Entertainment System', 99.99)">Add to
+            Cart</button>
+          <button class="btn btn-outline-secondary mt-2" onclick="addToWishlist('Nintendo Entertainment System')">Add to
+            Wishlist</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="mt-4">
+    <h4>Customer Reviews</h4>
+    <div class="rating">
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star"></span>
+      <span class="fa fa-star"></span>
+    </div>
+    <p class="text-muted">4.5 out of 5 stars (100 reviews)</p>
+  </div>
+  <!-- Footer (Same as products.html) -->
+  <footer class="bg-dark text-white text-center py-3">
+    <!-- Add footer content here -->
+  </footer>
+
+  <script src="product.js"></script>
+</body>
+
+</html>
