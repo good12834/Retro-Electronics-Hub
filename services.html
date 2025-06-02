@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services - Retro Electronics Hub</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <!-- Custom CSS -->
+  <style>
+    /* Service Cards */
+.card {
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+/* Service Pricing Table */
+.table th, .table td {
+  vertical-align: middle;
+}
+
+/* FAQ Section */
+.accordion-button {
+  font-weight: bold;
+}
+
+/* Service Request Form */
+#serviceForm .form-control {
+  margin-bottom: 15px;
+}
+/* Service Process Steps */
+.fa-3x {
+  color: #007bff;
+}
+
+/* Service Gallery */
+.img-fluid {
+  border-radius: 10px;
+}
+/* Service Packages */
+.card.h-100 {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card.h-100:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.badge.bg-warning {
+  color: #000;
+}
+
+.card.border-primary {
+  border: 2px solid #007bff;
+}
+
+/* Billing Toggle */
+.btn-group .btn.active {
+  background-color: #007bff;
+  color: white;
+}
+
+/* Feature Icons */
+.fa-check, .fa-times {
+  width: 20px;
+}
+
+/* Comparison Table */
+.table td, .table th {
+  vertical-align: middle;
+  text-align: center;
+}
+
+
+/* Service Guarantees */
+.fa-3x {
+  color: #28a745;
+}
+
+/* Interactive Map */
+.embed-responsive {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Social Proof */
+.img-fluid {
+  max-width: 150px;
+  height: auto;
+}
+.retro-services-footer {
+    background: #0d0d0d;
+    border-top: 4px solid #ff66ff;
+    color: #33ff33;
+    font-family: 'IBM Plex Mono', monospace;
+    padding: 2rem;
+    position: relative;
+}
+
+.services-footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding-bottom: 2rem;
+}
+
+.crt-heading {
+    position: relative;
+    padding: 1rem;
+    border: 1px solid #33ff33;
+    margin-bottom: 1.5rem;
+}
+
+.retro-service-menu li {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.led-indicator {
+    color: #ff0000;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    animation: pulse 1s infinite;
+}
+
+.status-monitor {
+    background: #000;
+    border: 2px solid #33ff33;
+    padding: 1.5rem;
+}
+
+.status-heading {
+    color: #ff66ff;
+    border-bottom: 1px dashed #33ff33;
+    padding-bottom: 0.5rem;
+}
+
+.service-status {
+    margin: 1rem 0;
+    padding: 0.5rem;
+    background: #001100;
+}
+
+.status-online { color: #33ff33; }
+.status-alert { color: #ffff00; }
+.status-offline { color: #ff4444; }
+
+.guarantee-card {
+    border: 3px double #33ff33;
+    padding: 1rem;
+    text-align: center;
+}
+
+.vintage-badge {
+    background: #33ff33;
+    color: #000;
+    padding: 0.5rem;
+    margin: 1rem 0;
+    font-size: 1.1rem;
+}
+
+.emergency-line {
+    background: #220000;
+    padding: 1rem;
+    border: 2px solid #ff4444;
+    margin-top: 1rem;
+}
+
+.flashing {
+    animation: flash 0.7s infinite;
+}
+
+.service-footer-bar {
+    border-top: 3px solid #ff66ff;
+    margin-top: 2rem;
+    padding-top: 1rem;
+}
+
+.certification-strip {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin: 1rem 0;
+}
+
+.cert-badge {
+    height: 40px;
+    filter: grayscale(100%) contrast(200%);
+}
+
+.system-message {
+    color: #33ff33;
+    text-align: center;
+    animation: text-glitch 2s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.3; }
+    50% { opacity: 1; }
+    100% { opacity: 0.3; }
+}
+
+@keyframes flash {
+    50% { opacity: 0; }
+}
+
+@keyframes text-glitch {
+    2% { text-shadow: 2px 0 #ff66ff; }
+    4% { transform: skew(5deg); }
+    96% { transform: none; }
+}
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Retro Electronics Hub</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="products.html">Products</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="services.html">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#signupModal">Sign Up</a>
+          </li>
+        </ul>
+        <!-- Cart Icon -->
+        <div class="cart-icon ms-3" id="cartIcon">
+          <i class="fas fa-shopping-cart"></i>
+          <span class="badge bg-danger" id="cartCount">0</span>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Services Hero Section -->
+  <header class="bg-primary text-white text-center py-5">
+    <div class="container">
+      <h1 class="display-4">Our Services</h1>
+      <p class="lead">Expert repairs, customization, and consultations for your vintage electronics.</p>
+    </div>
+  </header>
+
+  <!-- Service Categories -->
+  <section class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">Service Categories</h2>
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Repairs</h5>
+              <p class="card-text">We specialize in repairing vintage gaming consoles, audio devices, and gadgets.</p>
+              <a href="#repairs" class="btn btn-primary">Learn More</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Customization</h5>
+              <p class="card-text">Customize your retro electronics with modern features and designs.</p>
+              <a href="#customization" class="btn btn-primary">Learn More</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Consultations</h5>
+              <p class="card-text">Get expert advice on maintaining and upgrading your vintage electronics.</p>
+              <a href="#consultations" class="btn btn-primary">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Details -->
+  <section class="py-5 bg-light" id="repairs">
+    <div class="container">
+      <h2 class="text-center mb-4">Repair Services</h2>
+      <div class="row">
+        <div class="col-md-6">
+          <img src="images/repair-service.jpg" class="img-fluid" alt="Repair Service">
+        </div>
+        <div class="col-md-6">
+          <h3>Expert Repairs for Vintage Electronics</h3>
+          <p>We repair a wide range of vintage electronics, including:</p>
+          <ul>
+            <li>Gaming Consoles (NES, Sega Genesis, Game Boy)</li>
+            <li>Audio Devices (Walkman, Cassette Players)</li>
+            <li>Retro Gadgets (Vintage Cameras, Radios)</li>
+          </ul>
+          <p>Our technicians are trained to handle even the most delicate repairs.</p>
+          <a href="#serviceRequest" class="btn btn-primary">Request a Repair</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Pricing Table -->
+  <section class="py-5" id="pricing">
+    <div class="container">
+      <h2 class="text-center mb-4">Service Pricing</h2>
+      <div class="table-responsive">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Service</th>
+              <th>Description</th>
+              <th>Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Console Repair</td>
+              <td>Repair for vintage gaming consoles</td>
+              <td>$50 - $150</td>
+            </tr>
+            <tr>
+              <td>Audio Device Repair</td>
+              <td>Repair for vintage audio devices</td>
+              <td>$30 - $100</td>
+            </tr>
+            <tr>
+              <td>Customization</td>
+              <td>Custom modifications for retro electronics</td>
+              <td>$100 - $300</td>
+            </tr>
+            <tr>
+              <td>Consultation</td>
+              <td>Expert advice and recommendations</td>
+              <td>$50/hour</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Request Form -->
+  <section class="py-5 bg-light" id="serviceRequest">
+    <div class="container">
+      <h2 class="text-center mb-4">Request a Service</h2>
+      <form id="serviceForm">
+        <div class="mb-3">
+          <label for="name" class="form-label">Name</label>
+          <input type="text" class="form-control" id="name" required>
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" class="form-control" id="email" required>
+        </div>
+        <div class="mb-3">
+          <label for="service" class="form-label">Select Service</label>
+          <select class="form-select" id="service" required>
+            <option value="">Choose a service</option>
+            <option value="repair">Repair</option>
+            <option value="customization">Customization</option>
+            <option value="consultation">Consultation</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="message" class="form-label">Message</label>
+          <textarea class="form-control" id="message" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit Request</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">What Our Customers Say</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <p class="card-text">"Amazing service! My old NES works like new again."</p>
+              <p class="text-muted">- John Doe</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <p class="card-text">"Highly recommend their customization services. My Walkman looks fantastic!"</p>
+              <p class="text-muted">- Jane Smith</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <p class="card-text">"Great consultation service. They helped me restore my vintage radio."</p>
+              <p class="text-muted">- Mike Johnson</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-4">Frequently Asked Questions</h2>
+      <div class="accordion" id="faqAccordion">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+              How long does a repair take?
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Most repairs are completed within 5-7 business days.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+              Do you offer warranties on repairs?
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Yes, we offer a 90-day warranty on all repairs.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+              Can I ship my device for repairs?
+            </button>
+          </h2>
+          <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Yes, we accept shipped devices. Contact us for shipping instructions.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- Service Process Steps -->
+<section class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">How It Works</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="text-center">
+            <i class="fas fa-tools fa-3x mb-3"></i>
+            <h4>1. Request a Service</h4>
+            <p>Fill out the service request form or contact us directly.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="text-center">
+            <i class="fas fa-shipping-fast fa-3x mb-3"></i>
+            <h4>2. Ship Your Device</h4>
+            <p>Ship your device to our service center (if applicable).</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="text-center">
+            <i class="fas fa-check-circle fa-3x mb-3"></i>
+            <h4>3. Get It Back</h4>
+            <p>Receive your repaired or customized device in no time!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Service Gallery -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-4">Our Work</h2>
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <img src="images/repair-1.jpg" class="img-fluid" alt="Repair Work">
+        </div>
+        <div class="col-md-4 mb-4">
+          <img src="images/customization-1.jpg" class="img-fluid" alt="Customization Work">
+        </div>
+        <div class="col-md-4 mb-4">
+          <img src="images/consultation-1.jpg" class="img-fluid" alt="Consultation Work">
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Service Packages -->
+<section class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">Service Packages</h2>
+      
+      <!-- Billing Toggle -->
+      <div class="text-center mb-4">
+        <div class="btn-group" role="group">
+          <button type="button" class="btn btn-outline-primary active" data-billing="monthly">Monthly</button>
+          <button type="button" class="btn btn-outline-primary" data-billing="annual">Annual (Save 20%)</button>
+        </div>
+      </div>
+  
+      <!-- Package Cards -->
+      <div class="row">
+        <!-- Basic Package -->
+        <div class="col-md-4 mb-4">
+          <div class="card h-100">
+            <div class="card-header">
+              <h5 class="card-title">Basic Package</h5>
+              <span class="badge bg-warning">Starter</span>
+            </div>
+            <div class="card-body">
+              <div class="text-center">
+                <h4 class="my-3">
+                  <span class="monthly-price">$99</span>
+                  <span class="annual-price d-none">$79</span>
+                  <small class="text-muted">/month</small>
+                </h4>
+                <div class="annual-price d-none text-success">
+                  <i class="fas fa-check"></i> Billed annually ($949/year)
+                </div>
+              </div>
+              <ul class="list-unstyled">
+                <li class="mb-2">
+                  <i class="fas fa-check text-success me-2"></i>1 Repair Service
+                </li>
+                <li class="mb-2">
+                  <i class="fas fa-check text-success me-2"></i>Standard Parts
+                </li>
+                <li class="mb-2">
+                  <i class="fas fa-times text-danger me-2"></i>Priority Support
+                </li>
+              </ul>
+            </div>
+            <div class="card-footer bg-transparent">
+              <button class="btn btn-primary w-100">Choose Basic</button>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Standard Package (Most Popular) -->
+        <div class="col-md-4 mb-4">
+          <div class="card h-100 border-primary">
+            <div class="card-header bg-primary text-white">
+              <h5 class="card-title">Standard Package</h5>
+              <span class="badge bg-light text-primary">Most Popular</span>
+            </div>
+            <div class="card-body">
+              <div class="text-center">
+                <h4 class="my-3">
+                  <span class="monthly-price">$199</span>
+                  <span class="annual-price d-none">$159</span>
+                  <small class="text-muted">/month</small>
+                </h4>
+                <div class="annual-price d-none text-success">
+                  <i class="fas fa-check"></i> Billed annually ($1,908/year)
+                </div>
+              </div>
+              <ul class="list-unstyled">
+                <li class="mb-2">
+                  <i class="fas fa-check text-success me-2"></i>2 Services/Month
+                </li>
+                <li class="mb-2">
+                  <i class="fas fa-check text-success me-2"></i>Premium Parts
+                </li>
+                <li class="mb-2">
+                  <i class="fas fa-check text-success me-2"></i>Priority Support
+                </li>
+              </ul>
+            </div>
+            <div class="card-footer bg-transparent">
+              <button class="btn btn-primary w-100">Choose Standard</button>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Premium Package -->
+        <div class="col-md-4 mb-4">
+          <div class="card h-100">
+            <div class="card-header">
+              <h5 class="card-title">Premium Package</h5>
+              <span class="badge bg-danger">Best Value</span>
+            </div>
+            <div class="card-body">
+              <div class="text-center">
+                <h4 class="my-3">
+                  <span class="monthly-price">$499</span>
+                  <span class="annual-price d-none">$399</span>
+                  <small class="text-muted">/month</small>
+                </h4>
+                <div class="annual-price d-none text-success">
+                  <i class="fas fa-check"></i> Billed annually ($4,788/year)
+                </div>
+              </div>
+              <ul class="list-unstyled">
+                <li class="mb-2">
+                  <i class="fas fa-check text-success me-2"></i>Unlimited Services
+                </li>
+                <li class="mb-2">
+                  <i class="fas fa-check text-success me-2"></i>Premium Parts
+                </li>
+                <li class="mb-2">
+                  <i class="fas fa-check text-success me-2"></i>24/7 Priority Support
+                </li>
+              </ul>
+            </div>
+            <div class="card-footer bg-transparent">
+              <button class="btn btn-primary w-100">Choose Premium</button>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Package Comparison Table -->
+      <div class="table-responsive mt-5">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>Basic</th>
+              <th>Standard</th>
+              <th>Premium</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Monthly Repairs</td>
+              <td>1</td>
+              <td>2</td>
+              <td>Unlimited</td>
+            </tr>
+            <tr>
+              <td>Priority Support</td>
+              <td><i class="fas fa-times text-danger"></i></td>
+              <td><i class="fas fa-check text-success"></i></td>
+              <td><i class="fas fa-check text-success"></i></td>
+            </tr>
+            <tr>
+              <td>Discount on Parts</td>
+              <td>0%</td>
+              <td>10%</td>
+              <td>20%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  
+  <!-- Customer Reviews -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-4">Customer Reviews</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <p class="card-text">"Amazing service! My old NES works like new again."</p>
+              <p class="text-muted">- John Doe</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <p class="card-text">"Highly recommend their customization services. My Walkman looks fantastic!"</p>
+              <p class="text-muted">- Jane Smith</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <p class="card-text">"Great consultation service. They helped me restore my vintage radio."</p>
+              <p class="text-muted">- Mike Johnson</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Service Availability Calendar -->
+  <section class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">Service Availability</h2>
+      <div class="text-center">
+        <p>Check our availability for consultations or repairs.</p>
+        <a href="#" class="btn btn-primary">View Calendar</a>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Service Guarantees -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-4">Our Guarantees</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="text-center">
+            <i class="fas fa-shield-alt fa-3x mb-3"></i>
+            <h4>90-Day Warranty</h4>
+            <p>All repairs come with a 90-day warranty.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="text-center">
+            <i class="fas fa-hand-holding-usd fa-3x mb-3"></i>
+            <h4>Money-Back Guarantee</h4>
+            <p>Not satisfied? Get your money back within 30 days.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="text-center">
+            <i class="fas fa-star fa-3x mb-3"></i>
+            <h4>5-Star Service</h4>
+            <p>We guarantee a 5-star experience for every customer.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Interactive Map -->
+  <section class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">Find Us</h2>
+      <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item w-100" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.8354345093747!2d144.9537353153166!3d-37.816279742021665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf577d5a32f5c7b1e!2sRetro%20Electronics%20Hub!5e0!3m2!1sen!2sus!4v1622549400000!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Social Proof -->
+  <section class="py-5 bg-light">
+    <div class="container text-center">
+      <h2 class="mb-4">Trusted By</h2>
+      <div class="row">
+        <div class="col-md-3">
+          <img src="images/brand1.png" alt="Brand 1" class="img-fluid">
+        </div>
+        <div class="col-md-3">
+          <img src="images/brand2.png" alt="Brand 2" class="img-fluid">
+        </div>
+        <div class="col-md-3">
+          <img src="images/brand3.png" alt="Brand 3" class="img-fluid">
+        </div>
+        <div class="col-md-3">
+          <img src="images/brand4.png" alt="Brand 4" class="img-fluid">
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Newsletter Subscription -->
+  <section class="py-5 bg-primary text-white">
+    <div class="container text-center">
+      <h2 class="mb-4">Subscribe to Our Newsletter</h2>
+      <p>Get the latest updates on new services, exclusive deals, and more!</p>
+      <form class="d-flex justify-content-center">
+        <input type="email" class="form-control w-50 me-2" placeholder="Enter your email">
+        <button type="submit" class="btn btn-light">Subscribe</button>
+      </form>
+    </div>
+  </section>
+    <!-- Login Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Login</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="mb-3">
+                  <label for="loginEmail" class="form-label">Email</label>
+                  <input type="email" class="form-control" id="loginEmail">
+                </div>
+                <div class="mb-3">
+                  <label for="loginPassword" class="form-label">Password</label>
+                  <input type="password" class="form-control" id="loginPassword">
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <!-- Signup Modal -->
+      <div class="modal fade" id="signupModal" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Sign Up</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="mb-3">
+                  <label for="signupName" class="form-label">Name</label>
+                  <input type="text" class="form-control" id="signupName">
+                </div>
+                <div class="mb-3">
+                  <label for="signupEmail" class="form-label">Email</label>
+                  <input type="email" class="form-control" id="signupEmail">
+                </div>
+                <div class="mb-3">
+                  <label for="signupPassword" class="form-label">Password</label>
+                  <input type="password" class="form-control" id="signupPassword">
+                </div>
+                <button type="submit" class="btn btn-primary">Sign Up</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="retro-services-footer">
+        <div class="services-footer-grid">
+            <!-- Service Channels Column -->
+            <div class="footer-column">
+                <div class="crt-heading">
+                    <h3 class="section-title">// SERVICE CHANNELS</h3>
+                    <div class="scanlines"></div>
+                </div>
+                <ul class="retro-service-menu">
+                    <li><a href="#" class="channel-link"><span class="led-indicator">◉</span>Repair Portal</a></li>
+                    <li><a href="#" class="channel-link"><span class="led-indicator">◉</span>Maintenance Requests</a></li>
+                    <li><a href="#" class="channel-link"><span class="led-indicator">◉</span>Consultation Booking</a></li>
+                    <li><a href="#" class="channel-link"><span class="led-indicator">◉</span>Technical Support</a></li>
+                </ul>
+            </div>
+    
+            <!-- Service Status Column -->
+            <div class="footer-column">
+                <div class="status-monitor">
+                    <div class="crt-border">
+                        <h4 class="status-heading">SYSTEM STATUS</h4>
+                        <div class="status-lines">
+                            <p class="service-status">Repair Queue: <span class="status-online">OPERATIONAL</span></p>
+                            <p class="service-status">Support Desk: <span class="status-alert">HIGH LOAD</span></p>
+                            <p class="service-status">Parts Inventory: <span class="status-offline">LOW STOCK</span></p>
+                        </div>
+                        <div class="response-time">
+                            <p>AVG RESPONSE TIME: <span class="blink">45m 23s</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Service Assurance Column -->
+            <div class="footer-column">
+                <div class="guarantee-card">
+                    <div class="crt-effect">
+                        <h3 class="vintage-badge">24-MONTH LEGACY WARRANTY</h3>
+                        <p class="disclaimer-text">All repairs include our vintage assurance package</p>
+                    </div>
+                    <div class="service-contacts">
+                        <p class="emergency-line">
+                            <span class="flashing">⏻</span>
+                            24/7 CRITICAL SUPPORT: 
+                            <a href="tel:1800555987">1-800-555-REV</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Service Footer Bar -->
+        <div class="service-footer-bar">
+            <div class="certification-strip">
+                <span class="pixel-divider">■</span>
+                <img src="vintage-cert.png" class="cert-badge" alt="Vintage Certified">
+                <span class="pixel-divider">■</span>
+                <img src="retro-compliance.png" class="cert-badge" alt="Retro Compliant">
+                <span class="pixel-divider">■</span>
+            </div>
+            <div class="service-copyright">
+                <p>© 1993-2023 RETRO ELECTRONICS HUB SERVICES [v2.7.1]</p>
+                <p class="system-message">ALL CIRCUITS FUNCTIONAL</p>
+            </div>
+        </div>
+    </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JS -->
+  <script>
+    // Service Request Form
+document.getElementById('serviceForm').addEventListener('submit', (e) => {
+  e.preventDefault();
+  const name = document.getElementById('name').value;
+  const email = document.getElementById('email').value;
+  const service = document.getElementById('service').value;
+  const message = document.getElementById('message').value;
+
+  if (name && email && service && message) {
+    alert(`Thank you, ${name}! Your ${service} request has been submitted. We'll contact you at ${email}.`);
+    document.getElementById('serviceForm').reset();
+  } else {
+    alert('Please fill out all fields.');
+  }
+});
+// Newsletter Subscription
+document.querySelector('form').addEventListener('submit', (e) => {
+  e.preventDefault();
+  const email = e.target.querySelector('input[type="email"]').value;
+  if (email) {
+    alert(`Thank you for subscribing, ${email}!`);
+  } else {
+    alert('Please enter a valid email address.');
+  }
+});
+// Billing Toggle
+document.querySelectorAll('.btn-group .btn').forEach(button => {
+  button.addEventListener('click', () => {
+    document.querySelectorAll('.btn-group .btn').forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+    
+    const billingType = button.getAttribute('data-billing');
+    document.querySelectorAll('.monthly-price, .annual-price').forEach(element => {
+      element.classList.toggle('d-none', element.classList.contains(`${billingType}-price`));
+    });
+  });
+});
+
+// Package Selection
+document.querySelectorAll('.card button').forEach(button => {
+  button.addEventListener('click', () => {
+    const packageName = button.closest('.card').querySelector('.card-title').innerText;
+    alert(`You've selected the ${packageName} package!`);
+  });
+});
+  </script>
+</body>
+</html>
