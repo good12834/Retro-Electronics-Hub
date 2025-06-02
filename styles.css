@@ -1,0 +1,282 @@
+/* Custom Styles */
+body {
+   font-family: 'Times New Roman', Times, serif;
+   font-weight: bold;
+   text-transform: uppercase;
+   text-shadow: 1px;
+  }
+  
+  
+  
+  .card {
+    transition: transform 0.3s;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+  }
+  
+
+  
+
+  /* Custom Styles */
+.card {
+    position: relative;
+    transition: transform 0.3s;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+  }
+
+  /* Hero Section */
+
+
+
+
+/* Testimonials */
+.card {
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+/* Newsletter */
+.bg-primary {
+  background-color: #007bff !important;
+}
+/* Hero Section with Video Background */
+.hero-section {
+  position: relative;
+  overflow: hidden;
+  padding: 100px 0;
+ 
+}
+
+#heroVideo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+.video{
+  width: 100%;
+height: 100vh;
+}
+.overlay {
+  position: relative;
+  z-index: 1;
+ 
+  padding: 20px;
+}
+
+/* Interactive Stats */
+.display-4 {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+/* Countdown Timer */
+#countdown {
+  font-weight: bold;
+}
+.progress {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.progress-bar {
+  font-weight: bold;
+}
+
+#discountCode {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 10px;
+  border-radius: 5px;
+}
+/* Achievements Section */
+.achievement-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.achievement-card:hover {
+  transform: translateY(-10px);
+}
+
+.achievement-icon {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 15px;
+}
+
+.achievement-feature {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.achievement-feature:hover {
+  transform: translateY(-10px);
+}
+
+.feature-icon {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+}
+#emailReminderForm .input-group {
+  max-width: 400px;
+  margin: 0 auto;
+}
+/* FAQ Section */
+.accordion-button {
+  font-weight: bold;
+}
+.retro-footer {
+  background: #1a1a1a;
+  border-top: 3px solid #33ff33;
+  color: #33ff33;
+  font-family: 'Courier New', monospace;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  padding-bottom: 2rem;
+}
+
+.crt-logo {
+  position: relative;
+  filter: contrast(1.2) saturate(0.8);
+}
+
+.scanlines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+      0deg,
+      rgba(0,0,0,0.15) 0px,
+      rgba(0,0,0,0.15) 1px,
+      transparent 1px,
+      transparent 2px
+  );
+}
+
+.section-title {
+  color: #ff66ff;
+  text-shadow: 0 0 5px #ff66ff33;
+  border-bottom: 2px solid #33ff33;
+  padding-bottom: 0.5rem;
+}
+
+.retro-menu li {
+  margin: 1rem 0;
+}
+
+.glow-hover {
+  transition: 0.3s;
+  padding: 0.2rem 0;
+}
+
+.glow-hover:hover {
+  color: #fff;
+  text-shadow: 0 0 10px #33ff33;
+}
+
+.terminal-contact p {
+  background: #000;
+  padding: 0.5rem;
+  border: 1px solid #33ff33;
+  margin: 1rem 0;
+}
+
+.blinking-cursor {
+  animation: blink 1s step-end infinite;
+}
+
+.retro-social {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.pixel-icon {
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  border: 2px solid #33ff33;
+  background: #000;
+  transition: 0.3s;
+}
+
+.pixel-icon:hover {
+  background: #33ff33;
+  color: #000;
+}
+
+.footer-bar {
+  border-top: 2px solid #33ff33;
+  margin-top: 2rem;
+  padding-top: 1rem;
+}
+
+.retro-disclaimer {
+  text-align: center;
+  color: #ff4444;
+  animation: glitch 1s infinite;
+}
+
+.crt-effect {
+  position: relative;
+}
+
+.crt-effect::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(51,255,51,0.1) 50%, transparent 50%);
+  pointer-events: none;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+@keyframes glitch {
+  2% { text-shadow: 2px 0 #33ff33; }
+  4% { text-shadow: -2px 0 #ff33ff; }
+  98% { text-shadow: none; }
+}
+/* Footer */
+footer a {
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+  @media (max-width: 768px) {
+    .card {
+      margin-bottom: 20px;
+    }
+  }
