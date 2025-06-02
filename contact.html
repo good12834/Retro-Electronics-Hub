@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Retro Electronics Hub</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --retro-green: #33ff33;
+            --retro-pink: #ff66ff;
+            --retro-bg: #0a0a0a;
+        }
+
+        body {
+            background-color: var(--retro-bg);
+            color: var(--retro-green);
+            font-family: 'VT323', monospace;
+            margin: 0;
+            padding: 0;
+            text-transform: uppercase;
+        }
+
+        .retro-contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            position: relative;
+        }
+
+        /* Retro Map Section */
+        .vintage-map {
+            position: relative;
+            border: 3px solid var(--retro-green);
+            margin: 2rem 0;
+            height: 400px;
+            background: #000;
+        }
+
+        .map-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                0deg,
+                rgba(51,255,51,0.05) 0px,
+                rgba(51,255,51,0.05) 1px,
+                transparent 1px,
+                transparent 4px
+            );
+            pointer-events: none;
+        }
+
+        .map-legend {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: #000;
+            border: 2px solid var(--retro-pink);
+            padding: 1rem;
+        }
+
+        /* Contact Form */
+        .retro-contact-form {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .crt-form-panel {
+            background: #000;
+            border: 2px solid var(--retro-green);
+            padding: 2rem;
+            position: relative;
+        }
+
+        .crt-form-panel::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                rgba(255,102,255,0.1) 50%,
+                transparent 50%
+            );
+            pointer-events: none;
+        }
+
+        .form-input {
+            background: none;
+            border: 1px solid var(--retro-green);
+            color: var(--retro-green);
+            padding: 0.8rem;
+            margin: 1rem 0;
+            width: 100%;
+            font-family: 'VT323', monospace;
+        }
+
+        .retro-button {
+            background: var(--retro-green);
+            color: #000;
+            border: none;
+            padding: 1rem 2rem;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .retro-button:hover {
+            background: var(--retro-pink);
+        }
+
+        /* Live Chat Widget */
+        .retro-chat-widget {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #000;
+            border: 2px solid var(--retro-pink);
+            width: 300px;
+        }
+
+        .chat-header {
+            background: var(--retro-pink);
+            color: #000;
+            padding: 0.5rem;
+            cursor: pointer;
+        }
+
+        .chat-body {
+            display: none;
+            height: 200px;
+            padding: 1rem;
+            overflow-y: auto;
+        }
+
+        /* Special Features */
+        .analog-phone {
+            background: #222;
+            padding: 1rem;
+            text-align: center;
+            border: 2px solid var(--retro-green);
+            margin: 1rem 0;
+        }
+
+        .rotary-dial {
+            display: inline-block;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 3px solid var(--retro-green);
+            position: relative;
+        }
+
+        .service-status {
+            background: #000;
+            padding: 1rem;
+            border: 2px solid var(--retro-green);
+            margin: 2rem 0;
+        }
+
+        .status-led {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 0.5rem;
+        }
+
+        .online { background: #33ff33; animation: pulse 1s infinite; }
+        .offline { background: #ff4444; }
+
+        /* Retro Footer */
+        .retro-contact-footer {
+            border-top: 4px solid var(--retro-pink);
+            margin-top: 4rem;
+            padding: 2rem;
+            background: #000;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .emergency-contact {
+            color: #ff4444;
+            border: 2px dashed #ff4444;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        @keyframes pulse {
+            50% { opacity: 0.5; }
+        }
+
+        @keyframes scanlines {
+            from { background-position: 0 0; }
+            to { background-position: 0 100%; }
+        }
+    </style>
+</head>
+<body>
+      <!-- Navbar (Same as before) -->
+  <nav class="navbar navbar-expand-lg bg-primary">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Retro Electronics Hub</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="products.html">Products</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="services.html">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#signupModal">Sign Up</a>
+          </li>
+        </ul>
+      
+    </div>
+  </nav>
+    <!-- Login Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Login</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="mb-3">
+                  <label for="loginEmail" class="form-label">Email</label>
+                  <input type="email" class="form-control" id="loginEmail">
+                </div>
+                <div class="mb-3">
+                  <label for="loginPassword" class="form-label">Password</label>
+                  <input type="password" class="form-control" id="loginPassword">
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <!-- Signup Modal -->
+      <div class="modal fade" id="signupModal" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Sign Up</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="mb-3">
+                  <label for="signupName" class="form-label">Name</label>
+                  <input type="text" class="form-control" id="signupName">
+                </div>
+                <div class="mb-3">
+                  <label for="signupEmail" class="form-label">Email</label>
+                  <input type="email" class="form-control" id="signupEmail">
+                </div>
+                <div class="mb-3">
+                  <label for="signupPassword" class="form-label">Password</label>
+                  <input type="password" class="form-control" id="signupPassword">
+                </div>
+                <button type="submit" class="btn btn-primary">Sign Up</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    <div class="retro-contact-container">
+        <!-- Interactive Map -->
+        <div class="vintage-map">
+            <div class="map-overlay"></div>
+            <!-- Add your map integration here -->
+            <div class="map-legend">
+                <h3>// HEADQUARTERS</h3>
+                <p>■ 256 BIT LANE</p>
+                <p>■ SILICON VALLEY</p>
+                <p>■ EST. 1987</p>
+            </div>
+        </div>
+
+        <!-- Contact Form Section -->
+        <div class="retro-contact-form">
+            <div class="crt-form-panel">
+                <h2>// SEND MESSAGE</h2>
+                <input type="text" class="form-input" placeholder="NAME">
+                <input type="email" class="form-input" placeholder="EMAIL">
+                <select class="form-input">
+                    <option>SUBJECT: TECH SUPPORT</option>
+                    <option>SUBJECT: REPAIR REQUEST</option>
+                    <option>SUBJECT: VINTAGE INQUIRY</option>
+                </select>
+                <textarea class="form-input" rows="5" placeholder="MESSAGE"></textarea>
+                <button class="retro-button">TRANSMIT</button>
+            </div>
+
+            <!-- Special Features Panel -->
+            <div class="crt-form-panel">
+                <h2>// DIRECT LINE</h2>
+                <div class="analog-phone">
+                    <div class="rotary-dial"></div>
+                    <p>DIAL: 1-800-REV-1987</p>
+                </div>
+                
+                <div class="service-status">
+                    <h3>SYSTEM STATUS:</h3>
+                    <p><span class="status-led online"></span> SUPPORT TEAM ONLINE</p>
+                    <p><span class="status-led online"></span> PARTS INVENTORY</p>
+                    <p><span class="status-led offline"></span> AFTER HOURS SERVICE</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Live Chat Widget -->
+        <div class="retro-chat-widget">
+            <div class="chat-header">
+                📡 LIVE SUPPORT CHANNEL [v2.4]
+            </div>
+            <div class="chat-body">
+                <!-- Chat content here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Footer -->
+    <footer class="retro-contact-footer">
+        <div class="footer-grid">
+            <div>
+                <h3>// CONTACT PROTOCOLS</h3>
+                <p>📠 FAX: 1-800-555-1987</p>
+                <p>📻 RADIO: 146.520MHz</p>
+                <p>📫 SNAIL MAIL: P.O. BOX 1987</p>
+            </div>
+            
+            <div>
+                <h3>// SERVICE HOURS</h3>
+                <p>MON-FRI: 09:00-17:00 PST</p>
+                <p>SAT: 10:00-14:00 PST</p>
+                <p>SUN: SYSTEM MAINTENANCE</p>
+            </div>
+            
+            <div class="emergency-contact">
+                <h3>⚠ CRITICAL SUPPORT</h3>
+                <p>24/7 HOTLINE:</p>
+                <p>1-900-555-REV</p>
+                <p>⏳ RESPONSE TIME: <15m</p>
+            </div>
+        </div>
+        
+        <div class="certification-strip" style="text-align: center; margin-top: 2rem;">
+            <img src="vintage-certified.png" alt="Certification" style="height: 40px; margin: 0 1rem;">
+            <img src="retro-compliance.png" alt="Compliance" style="height: 40px; margin: 0 1rem;">
+        </div>
+
+        <div style="text-align: center; margin-top: 2rem;">
+            <p>© 1987-2023 RETRO ELECTRONICS HUB - ALL CHANNELS SECURE</p>
+            <p style="color: var(--retro-pink);">SYSTEM MEMORY: 640K | VERSION: CONTACT_OS_2.1</p>
+        </div>
+    </footer>
+      <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
