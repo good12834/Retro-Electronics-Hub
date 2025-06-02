@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - Retro Electronics Hub</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <!-- Custom CSS -->
+  <style>
+    /* Hero Section */
+.hero-section {
+  background: url('images/about-hero.jpg') no-repeat center center/cover;
+  padding: 100px 0;
+}
+
+/* Mission and Values */
+.fa-3x {
+  color: #007bff;
+}
+
+/* Team Cards */
+.card {
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+/* Fun Facts */
+.display-4 {
+  font-weight: bold;
+}
+
+/* Call-to-Action */
+.bg-primary {
+  background-color: #007bff !important;
+}
+
+/* Newsletter Subscription */
+.form-control {
+  max-width: 400px;
+}
+.retro-about-footer {
+    background: #0a0a0a;
+    border-top: 4px solid #ff66ff;
+    color: #33ff33;
+    font-family: 'VT323', monospace;
+    padding: 2rem;
+    position: relative;
+}
+
+.footer-timeline {
+    border: 2px dashed #33ff33;
+    margin: 2rem 0;
+    padding: 1rem;
+}
+
+.timeline-track {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.timeline-track::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: #33ff33;
+    z-index: 1;
+}
+
+.timeline-event {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 1rem;
+}
+
+.crt-marker {
+    width: 20px;
+    height: 20px;
+    background: #ff66ff;
+    border-radius: 50%;
+    margin: 0 auto;
+    box-shadow: 0 0 10px #ff66ff;
+}
+
+.command-line {
+    background: #000;
+    border: 1px solid #33ff33;
+    padding: 1rem;
+    margin: 1rem 0;
+}
+
+.vintage-team-photo {
+    position: relative;
+    margin: 2rem 0;
+}
+
+.film-grain {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('film-grain.png');
+    opacity: 0.3;
+}
+
+.retro-mission {
+    border: 3px double #33ff33;
+    padding: 1rem;
+    margin: 1rem 0;
+}
+
+.typewriter-text {
+    overflow: hidden;
+    border-right: 2px solid #33ff33;
+    white-space: nowrap;
+    animation: typing 3.5s steps(40, end);
+}
+
+.achievement-badges {
+    display: flex;
+    gap: 1rem;
+    margin: 1rem 0;
+    flex-wrap: wrap;
+}
+
+.badge {
+    background: #33ff33;
+    color: #000;
+    padding: 0.3rem 0.8rem;
+    border-radius: 3px;
+    font-size: 0.9rem;
+}
+
+.historical-contact {
+    border: 1px solid #33ff33;
+    padding: 1rem;
+}
+
+.pixel-map {
+    line-height: 1.5;
+    letter-spacing: 2px;
+}
+
+.heritage-bar {
+    border-top: 2px solid #ff66ff;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    text-align: center;
+}
+
+.old-symbol {
+    color: #ff66ff;
+    margin: 0 0.5rem;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+.icon-8bit {
+    font-size: 2rem;
+    margin: 0 0.5rem;
+    transition: 0.3s;
+}
+
+.icon-8bit:hover {
+    text-shadow: 0 0 10px #ff66ff;
+}
+
+.glitched-text {
+    animation: glitch 1s infinite;
+}
+
+@keyframes glitch {
+    2% { transform: translate(2px, 0); }
+    4% { transform: translate(-1px, 2px); }
+    96% { transform: none; }
+}
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Retro Electronics Hub</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="products.html">Products</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="services.html">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="about.html">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#signupModal">Sign Up</a>
+          </li>
+        </ul>
+        <!-- Cart Icon -->
+        <div class="cart-icon ms-3" id="cartIcon">
+          <i class="fas fa-shopping-cart"></i>
+          <span class="badge bg-danger" id="cartCount">0</span>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero-section text-center text-white py-5">
+    <div class="container">
+      <h1 class="display-4">About Retro Electronics Hub</h1>
+      <p class="lead">Your trusted partner in preserving and celebrating vintage electronics.</p>
+    </div>
+  </header>
+
+  <!-- Our Story -->
+  <section class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">Our Story</h2>
+      <div class="row">
+        <div class="col-md-6">
+          <img src="images/about-story.jpg" class="img-fluid rounded" alt="Our Story">
+        </div>
+        <div class="col-md-6">
+          <p>Founded in 2010, Retro Electronics Hub started as a small repair shop for vintage gaming consoles. Over the years, we've grown into a trusted name in the retro electronics community, offering repairs, customization, and consultations for a wide range of vintage gadgets.</p>
+          <p>Our passion for preserving the past and bringing nostalgia to life drives everything we do. From classic gaming consoles to iconic audio devices, we're dedicated to keeping the magic of retro electronics alive.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission and Values -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-4">Mission and Values</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="text-center">
+            <i class="fas fa-bullseye fa-3x mb-3"></i>
+            <h4>Our Mission</h4>
+            <p>To preserve and celebrate the legacy of vintage electronics by providing expert repairs, customization, and education.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="text-center">
+            <i class="fas fa-eye fa-3x mb-3"></i>
+            <h4>Our Vision</h4>
+            <p>To become the global leader in retro electronics, inspiring nostalgia and innovation for generations to come.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="text-center">
+            <i class="fas fa-heart fa-3x mb-3"></i>
+            <h4>Our Values</h4>
+            <p>Passion, integrity, and a commitment to excellence in everything we do.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Meet the Team -->
+  <section class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">Meet the Team</h2>
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <img src="images/team1.jpg" class="card-img-top" alt="John Doe">
+            <div class="card-body">
+              <h5 class="card-title">John Doe</h5>
+              <p class="card-text">Founder & CEO</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <img src="images/team2.jpg" class="card-img-top" alt="Jane Smith">
+            <div class="card-body">
+              <h5 class="card-title">Jane Smith</h5>
+              <p class="card-text">Lead Technician</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <img src="images/team3.jpg" class="card-img-top" alt="Mike Johnson">
+            <div class="card-body">
+              <h5 class="card-title">Mike Johnson</h5>
+              <p class="card-text">Customer Support</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Customer Testimonials -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-4">What Our Customers Say</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <p class="card-text">"Amazing service! My old NES works like new again."</p>
+              <p class="text-muted">- John Doe</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <p class="card-text">"Highly recommend their customization services. My Walkman looks fantastic!"</p>
+              <p class="text-muted">- Jane Smith</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <p class="card-text">"Great consultation service. They helped me restore my vintage radio."</p>
+              <p class="text-muted">- Mike Johnson</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Awards and Certifications -->
+  <section class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">Awards and Certifications</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <img src="images/award1.png" class="img-fluid mb-3" alt="Award 1">
+        </div>
+        <div class="col-md-4">
+          <img src="images/award2.png" class="img-fluid mb-3" alt="Award 2">
+        </div>
+        <div class="col-md-4">
+          <img src="images/award3.png" class="img-fluid mb-3" alt="Award 3">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fun Facts -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-4">Fun Facts</h2>
+      <div class="row">
+        <div class="col-md-3 text-center">
+          <h3 class="display-4">5000+</h3>
+          <p>Happy Customers</p>
+        </div>
+        <div class="col-md-3 text-center">
+          <h3 class="display-4">10000+</h3>
+          <p>Products Repaired</p>
+        </div>
+        <div class="col-md-3 text-center">
+          <h3 class="display-4">150+</h5>
+          <p>5-Star Reviews</p>
+        </div>
+        <div class="col-md-3 text-center">
+          <h3 class="display-4">10+</h3>
+          <p>Years in Business</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call-to-Action -->
+  <section class="py-5 bg-primary text-white">
+    <div class="container text-center">
+      <h2 class="mb-4">Ready to Explore Our Products?</h2>
+      <a href="products.html" class="btn btn-light btn-lg">Shop Now</a>
+    </div>
+  </section>
+
+  <!-- Newsletter Subscription -->
+  <section class="py-5">
+    <div class="container text-center">
+      <h2 class="mb-4">Subscribe to Our Newsletter</h2>
+      <p>Get the latest updates on new products, exclusive deals, and more!</p>
+      <form class="d-flex justify-content-center">
+        <input type="email" class="form-control w-50 me-2" placeholder="Enter your email">
+        <button type="submit" class="btn btn-primary">Subscribe</button>
+      </form>
+    </div>
+  </section>
+  <footer class="retro-about-footer">
+    <div class="footer-timeline">
+        <!-- Company History -->
+        <div class="timeline-track">
+            <div class="timeline-event" data-year="1987">
+                <div class="crt-marker"></div>
+                <p>Founded in Silicon Valley</p>
+            </div>
+            <div class="timeline-event" data-year="1994">
+                <div class="crt-marker"></div>
+                <p>First Retro Catalog Published</p>
+            </div>
+            <div class="timeline-event" data-year="2001">
+                <div class="crt-marker"></div>
+                <p>Global Preservation Initiative</p>
+            </div>
+            <div class="timeline-event" data-year="2023">
+                <div class="crt-marker"></div>
+                <p>Digital Archive Launched</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="about-footer-grid">
+        <!-- Core Values -->
+        <div class="footer-column">
+            <h3 class="section-title">// CORE DIRECTIVES</h3>
+            <div class="command-line">
+                <p>> PRESERVE_LEGACY.EXE</p>
+                <p>> RESTORE_HISTORY.BAT</p>
+                <p>> EDUCATE_NEXTGEN.COM</p>
+            </div>
+            <div class="vintage-team-photo">
+                <img src="team-1990.jpg" alt="Original Team">
+                <div class="film-grain"></div>
+                <p class="caption">Original 1990 Tech Team</p>
+            </div>
+        </div>
+
+        <!-- Legacy Section -->
+        <div class="footer-column">
+            <div class="retro-mission">
+                <h3 class="glitch-text">OUR LEGACY</h3>
+                <div class="crt-message">
+                    <p class="typewriter-text">Since 1987, we've been guardians of technological heritage, preserving the machines that shaped our digital world. Our mission: Keep history powered on.</p>
+                </div>
+                <div class="achievement-badges">
+                    <div class="badge">35+ Years</div>
+                    <div class="badge">5000+ Restorations</div>
+                    <div class="badge">200+ Patents</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Historical Contact -->
+        <div class="footer-column">
+            <div class="historical-contact">
+                <h3 class="section-title">// ARCHIVE ACCESS</h3>
+                <div class="vintage-address">
+                    <p>Original Headquarters:</p>
+                    <p class="pixel-map">■ 256 Bit Lane<br> Silicon Valley, CA<br> ZIP: 10101</p>
+                </div>
+                <div class="retro-social">
+                    <a href="#" class="icon-8bit">📠</a>
+                    <a href="#" class="icon-8bit">📡</a>
+                    <a href="#" class="icon-8bit">💾</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Heritage Footer Bar -->
+    <div class="heritage-bar">
+        <div class="legacy-statement">
+            <span class="old-symbol">◈</span>
+            PRESERVING TECH HISTORY SINCE 1987
+            <span class="old-symbol">◈</span>
+        </div>
+        <div class="copyright">
+            <p>© 1987-2023 RETRO ELECTRONICS HUB - SYSTEM MEMORY: 640K</p>
+        </div>
+    </div>
+</footer>
+
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JS -->
+  <script>
+    // Newsletter Subscription
+document.querySelector('form').addEventListener('submit', (e) => {
+  e.preventDefault();
+  const email = e.target.querySelector('input[type="email"]').value;
+  if (email) {
+    alert(`Thank you for subscribing, ${email}!`);
+  } else {
+    alert('Please enter a valid email address.');
+  }
+});
+  </script>
+</body>
+</html>
